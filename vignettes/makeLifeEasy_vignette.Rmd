@@ -103,9 +103,9 @@ Hierbij vervang je data door de naam van je tibble, column_name door de naam van
 
 ### Functie 5:
 
-#### 'custom_summary()'
+#### 'simple_summary()'
 
-De custom_summary() functie biedt een aangepaste samenvatting van een tibble met behulp van de groepering en de opgegeven kolommen. met een summary kan je makkelijk selecteren wat je nodig hebt en maak je minder snel fouten wanneer je data bijvoorbeeld wilt plotten. Probeer het volgende voorbeeld:
+De simple_summary() functie biedt een aangepaste samenvatting van een tibble met behulp van de groepering en de opgegeven kolommen. met een summary kan je makkelijk selecteren wat je nodig hebt en maak je minder snel fouten wanneer je data bijvoorbeeld wilt plotten. Probeer het volgende voorbeeld:
 
 ```r
  data <- tibble(
@@ -115,7 +115,7 @@ De custom_summary() functie biedt een aangepaste samenvatting van een tibble met
   value3 = c(5, 10, 15, 20, 25)
 )
 
-summary <- custom_summary(data, group, c(value1, value2))
+summary <- simple_summary(data, group, c(value1, value2))
 
 summary
 
