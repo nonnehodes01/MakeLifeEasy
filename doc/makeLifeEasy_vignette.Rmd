@@ -1,0 +1,129 @@
+---
+title: "R Package: makeLifeEasy - Vereenvoudig je R-programmering."
+author: "Nonne Hodes"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Inleiding
+
+Welkom bij de vignette voor de "makeLifeEasy" R Package. In deze vignette laten we zien hoe je de functies van de package kunt gebruiken om je leven iets gemakkelijker te maken bij het werken met en leren van R.
+
+
+## Installatie
+
+Om te beginnen, zorg ervoor dat je de "makeLifeEasy" package hebt geïnstalleerd. Je kunt dit doen met behulp van het volgende commando:
+
+```r
+install.packages("makeLifeEasy")
+
+``` 
+
+## Laden van de package
+
+Laten we vervolgends de "makeLifeEasy" package laden, zodat we toegang hebben tot de functies en mogelijkheden:
+
+```r
+library(makeLifeEasy)
+```
+
+nu kunnen we aan de slag met de package. de package heeft verschillende functies, hieronder is kort uitgelegd wat deze doen en hoe je ze kan gebruiken. 
+
+
+### Functie 1:
+
+#### 'load_common_libaries()'
+
+De load_common_libraries() functie laadt een set veelgebruikte libraries in R. Dit is handig omdat het je tijd bespaart bij het steeds opnieuw laden van dezelfde libraries in elk script. Gebruik de functie als volgt:
+
+```r
+load_common_libraries()
+```
+Dit zal de geselecteerde packages laden, zodat je direct aan de slag kunt zonder elke package apart te hoeven laden.
+
+### Functie 2: 
+
+#### 'generate_random_numbers()'
+
+Met de generate_random_numbers() functie kun je een lijst met willekeurige getallen genereren. Je kunt de lengte van de lijst opgeven als argument. deze functie is vooral handig wanneer je nog aan het leren bent om te programmeren met r, op deze manier kan je makkelijk en snel testlijsten maken om te gebruiken met het oefenen. Probeer het volgende commando:
+
+```r
+random_numbers <- generate_random_numbers(5)
+random_numbers
+```
+
+Dit genereert een lijst met 5 willekeurige getallen.
+
+### Functie 3:
+
+#### 'generate_random_words()'
+
+De generate_random_words() functie genereert een lijst met willekeurige woorden. Je kunt de gewenste lengte van de lijst opgeven als argument. net zoals bij de generate_random_numbers functie is deze fucntie vooral handig bij het leren programmeren met R. je kan snel en makkelijk testlijsten maken met random woorden, waar je vervolgens andere commandos op kan testen. Probeer het volgende commando:
+
+```r
+random_words <- generate_random_words(5)
+random_words
+
+```
+
+Dit genereert een lijst met 5 willekeurige woorden.
+
+
+### Functie 4:
+
+#### 'change_column_category()'
+
+Met de change_column_category() functie kun je de categorie van een kolom in een tibble aanpassen. Geef de tibble, de naam van de kolom en de nieuwe categorie op als argumenten. dit is handig om zonder moeite en snel de catagorie van een kolom aan te passen wanneer je opmerkt dat deze niet correct is of wanneer je hem anders wil hebben.  Bekijk het volgende voorbeeld:
+
+```r
+# Een voorbeeld tibble
+data <- tibble(col1 = c("1", "2", "3"),
+               col2 = c(4, 5, 6))
+
+# Verander de categorie van "col1" naar character
+data <- change_column_category(data, "col1", "character")
+
+data
+
+```
+
+Hierbij vervang je data door de naam van je tibble, column_name door de naam van de kolom die je wilt aanpassen en new_category door de gewenste nieuwe categorie.
+
+
+### Functie 5:
+
+#### 'custom_summary()'
+
+De custom_summary() functie biedt een aangepaste samenvatting van een tibble met behulp van de groepering en de opgegeven kolommen. met een summary kan je makkelijk selecteren wat je nodig hebt en maak je minder snel fouten wanneer je data bijvoorbeeld wilt plotten. Probeer het volgende voorbeeld:
+
+```r
+ data <- tibble(
+  group = c("A", "A", "B", "B", "B"),
+  value1 = c(1, 2, 3, 4, 5),
+  value2 = c(10, 20, 30, 40, 50)
+  value3 = c(5, 10, 15, 20, 25)
+)
+
+summary <- custom_summary(data, group, c(value1, value2))
+
+summary
+
+```
+
+Hierbij vervang je data door de naam van je tibble, grouping_column door de naam van de groeperingskolom en summary_columns door een vector met de namen van de samenvattingskolommen.
+
+## Conclusie
+
+De "makeLifeEasy" package biedt een verzameling functies die je kunnen helpen bij het vereenvoudigen van je R-programmeerervaring. Experimenteer met de verschillende functies en ontdek hoe ze je workflow kunnen verbeteren.
+
